@@ -6,6 +6,7 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -105,6 +106,7 @@ public class GetData extends Activity {
 
         while(it.hasNext()) {
             String[] temp = (String[])it.next();
+            float textSize = 25;
             // Create a new TableRow
             TableRow tableRow = new TableRow(this);
 
@@ -113,18 +115,21 @@ public class GetData extends Activity {
             textViewOne.setText(String.valueOf(rank));
             textViewOne.setGravity(Gravity.START);
             textViewOne.setLayoutParams(param);
+            textViewOne.setTextSize(TypedValue.COMPLEX_UNIT_SP, textSize);
 
             //Create the second Textview
             TextView textViewTwo = new TextView(this);
             textViewTwo.setText(temp[0]);
             textViewTwo.setGravity(Gravity.CENTER);
             textViewTwo.setLayoutParams(param);
+            textViewTwo.setTextSize(TypedValue.COMPLEX_UNIT_SP, textSize);
 
             //Create the third Textview
             TextView textViewThree = new TextView(this);
             textViewThree.setText(temp[2]);
             textViewThree.setGravity(Gravity.END);
             textViewThree.setLayoutParams(param);
+            textViewThree.setTextSize(TypedValue.COMPLEX_UNIT_SP, textSize);
 
 
             // add TextViews to the Tablerow
